@@ -3,7 +3,7 @@ main.py — Entry point for Aura, a professional Discord moderation bot.
 
 Setup
 ─────
-  1. Copy .env.example → .env and fill in your DISCORD_TOKEN.
+  1. Copy .env.example → .env and fill in your DISCORD_TOKEN_AURA
   2. Install dependencies:
        pip install -U discord.py python-dotenv Pillow
   3. Run:
@@ -322,10 +322,10 @@ class Aura(commands.Bot):
 # ── Entry point ───────────────────────────────────────────────────────────────
 
 async def main() -> None:
-    token = os.getenv("DISCORD_TOKEN", "").strip()
+    token = os.getenv("DISCORD_TOKEN_AURA", "").strip()
     if not token:
         log.critical(
-            "DISCORD_TOKEN is not set!\n"
+            "DISCORD_TOKEN_AURA is not set!\n"
             "  • Create a .env file in this directory.\n"
             "  • Add this line:  DISCORD_TOKEN=your_bot_token_here\n"
             "  • Then restart Aura."
